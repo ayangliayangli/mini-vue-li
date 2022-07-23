@@ -1,7 +1,7 @@
-import { Dep, watchEffect, reactive } from '../src/reactivety/index.js';
+import { Dep, watchEffect, reactive } from '../src/reactivity/index.js';
 
 
-// example
+// example ref
 // a 变化的时候, 自动执行副作用 --> b = a.val + 10
 // const a = new Dep(10);
 // let b = 0;
@@ -13,6 +13,8 @@ import { Dep, watchEffect, reactive } from '../src/reactivety/index.js';
 // a.value = 20;
 // console.log(`a: ${a.value}, b: ${b}`);
 
+
+// example reactive
 const student = reactive({
     age: 20,
 })
