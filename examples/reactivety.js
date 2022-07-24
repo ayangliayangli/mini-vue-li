@@ -1,4 +1,4 @@
-import { Dep, watchEffect, reactive } from '../src/reactivity/index.js';
+import { Dep, watchEffect, reactive } from '../core/reactivity/index.js';
 
 
 // example ref
