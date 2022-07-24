@@ -18,7 +18,7 @@ const App = {
   render(ctx) {
     return h('div', {}, [
       h('div', { id: 1, class: 'class-1' }, 'ctx.state.count: ' + String(ctx.state.count)),
-      h('div', null, '其他文本'),
+      h('div', {}, '其他文本'),
     ]);
   },
 };
