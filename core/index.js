@@ -1,5 +1,5 @@
 import { watchEffect } from './reactivity/index.js';
-import { mountElement, diff } from './renderer/index.js';
+import { mountElement } from './renderer/index.js';
 
 export function createApp(rootApp) {
   return {
@@ -9,7 +9,8 @@ export function createApp(rootApp) {
       let prevVNode;
 
       watchEffect(() => {
-        console.log('start to update');
+        console.log('start to render dom');
+
         if (isMounted) {
           console.log('mounte');
           rootContainer.innerHTML = '';
