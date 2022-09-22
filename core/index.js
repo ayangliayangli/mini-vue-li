@@ -1,5 +1,5 @@
 import { watchEffect } from './reactivity/index.js';
-import { mountElement } from './renderer/index.js';
+import { mountElement, diff } from './renderer/index.js';
 
 export function createApp(rootApp) {
   return {
