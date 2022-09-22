@@ -7,8 +7,13 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "s": "serve"
   },
   "author": "",
   "license": "ISC",
-  "type": "module"}
+  "type": "module",
+  "dependencies": {
+    "serve": "^14.0.1"
+  }
+}
