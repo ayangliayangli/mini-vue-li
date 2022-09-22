@@ -1,5 +1,8 @@
-import { watchEffect } from './reactivity/index.js';
+import { effect } from './reactivity/index.js';
 import { mountElement, diff } from './renderer/index.js';
+export * from './renderer'
+export * from './reactivity'
+export * from './shared'
 
 export function createApp(rootApp) {
   return {
@@ -8,7 +11,7 @@ export function createApp(rootApp) {
       let isMounted = true;
       let prevVNode;
 
-      watchEffect(() => {
+      effect(() => {
         console.log('start to render dom');
 
         if (isMounted) {

@@ -1,3 +1,6 @@
+export { reactive } from './reactive'
+export { effect } from './effect'
+
 // 全局当前的副作用
 let currentEffect;
 
@@ -60,25 +63,25 @@ function getTargetKeyEffects(target, key) {
   return keyEffects;
 }
 
-export function reactive(raw) {
-  return new Proxy(raw, {
-    get(target, key) {
-      const effects = getTargetKeyEffects(target, key);
-      //  收集一个副作用
-      if (currentEffect) {
-          effects.add(currentEffect);
-      }
-      return Reflect.get(target, key);
-    },
-    set(target, key, val) {
-      Reflect.set(target, key, val);
-      const effects = getTargetKeyEffects(target, key);
-      //   执行副作用
-      effects.forEach((effect) => {
-        effect();
-      });
+// export function reactive(raw) {
+//   return new Proxy(raw, {
+//     get(target, key) {
+//       const effects = getTargetKeyEffects(target, key);
+//       //  收集一个副作用
+//       if (currentEffect) {
+//           effects.add(currentEffect);
+//       }
+//       return Reflect.get(target, key);
+//     },
+//     set(target, key, val) {
+//       Reflect.set(target, key, val);
+//       const effects = getTargetKeyEffects(target, key);
+//       //   执行副作用
+//       effects.forEach((effect) => {
+//         effect();
+//       });
 
-      return true
-    },
-  });
-}
+//       return true
+//     },
+//   });
+// }

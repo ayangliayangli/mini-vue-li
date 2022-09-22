@@ -1,6 +1,4 @@
-import { reactive, watchEffect } from '../core/reactivity/index.js';
-import { createApp } from '../core/index.js';
-import { h } from '../core/renderer/index.js';
+import { createApp, h, reactive } from '../dist/vue.esm.js';
 
 const App = {
   setup() {
